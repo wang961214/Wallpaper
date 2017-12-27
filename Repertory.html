@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Repertory</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/repertory.js"></script>
+    <script src="js/template-native.js"></script>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="header-bg">
+    <div class="header-body">
+        <a class="logo" href="index.html"></a>
+        <ul class="clear">
+            <li><input type="text" id="search" placeholder="Search">
+                <ul id="secbox"></ul>
+            </li>
+            <li><a href="Repertory.html">Repertory</a></li>
+            <li><a href="#" id="login2">Login</a>
+                <ul id="login3" >
+                    <li>
+                        <form action="">
+                            <input type="text" id="name2" placeholder="请输入用户名">
+                            <input type="password" id="pwd3" placeholder="请输入密码">
+                            <input type="button" id="dl" value="登录">
+                        </form></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="outer">
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/1.jpg" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/2.jpg" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/3.jpg" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/4.jpg" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/5.jpg" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/6.jpg" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/7.jpg" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/8.png" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/9.jpg" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/10.jpg" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/11.jpg" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="img/12.jpg" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $.ajax({
+            url:"dl.php",
+            dataType:"text",
+            success:function (date) {
+                if(date!=1){
+                    $("#login2").html(date);
+                    $("#login3").html(" ");
+                }
+            }
+        })
+    })
+</script>
+<script id="template" type="text/html">
+    <%for(var i=0;i
+    <items.length;i++){%>
+    <div class="inner">
+        <div class="innerBox">
+            <img src="<%=items[i].path%>" alt="">
+            <p>Created by: Wang Dong</p>
+        </div>
+    </div>
+    <%}%>
+</script>
+<script>
+    $(function () {
+        $(".outer").waterfall(".inner");
+        $(window).scroll(function () {
+            if ($(document).scrollTop() + $(window).height() >= $(document).height()) {
+                getData();
+            }
+        });
+        $(".outer").on("click", ".innerBox>img", function () {
+            var imgSrc = $(this).get(0).src;
+            var Arr = [];
+            Arr = imgSrc.split("/");
+            imgSrc = Arr[4] + "/" + Arr[5];
+            window.location.href = "LeftRight.html?url=" + imgSrc;
+        });
+
+    });
+
+    function getData() {
+        $.ajax({
+            url: "waterfall.php",
+            dataType: "json",
+            success: function (data) {
+                var html = template("template", data);
+                $(".outer").append(html);
+                $("img").load(function () {
+                    $(".outer").waterfall(".inner");
+                });
+            }
+        })
+    }
+
+</script>
+</body>
+</html>

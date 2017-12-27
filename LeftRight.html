@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LeftRight</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
+</head>
+<body>
+<div class="header-bg">
+    <div class="header-body">
+        <a class="logo" href="index.html"></a>
+        <ul class="clear">
+            <li><input type="text" id="search" placeholder="Search">
+                <ul id="secbox"></ul>
+            </li>
+            <li><a href="Repertory.html">Repertory</a></li>
+            <li><a href="#" id="login2">Login</a>
+                <ul id="login3" >
+                    <li>
+                        <form action="">
+                            <input type="text" id="name2" placeholder="请输入用户名">
+                            <input type="password" id="pwd3" placeholder="请输入密码">
+                            <input type="button" id="dl" value="登录">
+                        </form></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="body-down search">
+    <img id="big" src="img/1.jpg" alt="">
+    <p>Created by: Wang Dong</p>
+    <a><img src="img/icon.png" alt=""></a>
+</div>
+<div class="Left"></div>
+<div class="Right"></div>
+<script>
+    $(function () {
+        $.ajax({
+            url:"dl.php",
+            dataType:"text",
+            success:function (date) {
+                if(date!=1){
+                    $("#login2").html(date);
+                    $("#login3").html(" ");
+                }
+            }
+        })
+    })
+</script>
+<script>
+    $(function () {
+        var Url = window.location.href;
+        var Arr = Url.split("url=");
+        Url = Arr[1];
+        $("img#big").attr("src", Url);
+        $(".Left").on("click", function () {
+            var imgSrc = $("#big").get(0).src;
+            var Arr = [];
+            Arr = imgSrc.split("/");
+            imgSrc = Arr[4] + "/" + Arr[5];
+            $.getJSON("info/data.json", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].path == imgSrc) {
+                        if (i == 0) {
+                            $("img#big").attr("src", data[data.length - 1].path);
+                        } else {
+                            $("img#big").attr("src", data[i - 1].path);
+                        }
+                    }
+                }
+            })
+        });
+        $(".Right").on("click", function () {
+            var imgSrc = $("#big").get(0).src;
+            var Arr = [];
+            Arr = imgSrc.split("/");
+            imgSrc = Arr[4] + "/" + Arr[5];
+            $.getJSON("info/data.json", function (data) {
+                for (var i = 0; i < data.length; i++) {
+                    if (data[i].path == imgSrc) {
+                        if (i == data.length - 1) {
+                            $("img#big").attr("src", data[1].path);
+                        } else {
+                            $("img#big").attr("src", data[i + 1].path);
+                        }
+                    }
+                }
+            })
+        });
+    });
+</script>
+</body>
+</html>

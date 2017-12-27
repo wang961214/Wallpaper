@@ -1,0 +1,546 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+i{
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+}
+label{
+    font-size: 16px;
+}
+
+.clear {
+    clear: both;
+}
+
+body {
+    background: url("../img/bg.png");
+}
+
+/*-----------------------------头部导航栏*/
+.header-bg {
+    width: 100%;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.header-body {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.header-body a.logo {
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    width: 260px;
+    height: 30px;
+    background: url("../img/logo.png") no-repeat;
+}
+
+.header-body ul {
+    list-style: none;
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+.header-body ul li {
+    float: left;
+    margin-left: 50px;
+    height: 30px;
+
+}
+
+.header-body ul li input {
+    padding-left: 10px;
+    margin-top: -5px;
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: #fff;
+    font-size: 16px;
+}
+.header-body ul li a {
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+}
+.header-body ul li ul#secbox {
+    position: relative;
+    top: 5px;
+    z-index: 50;
+    line-height: 10px;
+    list-style: none;
+    display: none;
+    border-radius: 10px;
+    border-top: none;
+    background: #4a4a4a;
+}
+
+.header-body ul li ul#secbox li {
+    float: none;
+    display: block;
+    margin-left: 0;
+    padding-left: 10px;
+    line-height: 30px;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.header-body ul li ul#secbox li a {
+    text-decoration: none;
+}
+
+.header-body ul li ul#secbox li:hover {
+    background-color: #6c6c6c;
+    cursor: pointer;
+}
+#login3{
+    display: none;
+    position: absolute;
+    left: 470px;
+    top: 30px;
+    width: 200px;
+    height:auto;
+}
+#login3 li {
+    float: none;
+    margin: 10px auto;
+    width: 160px;
+}
+#login3 li input{
+    display: block;
+    width: 160px;
+    height: 30px;
+    font-size: 14px;
+    color: #fff;
+    margin-top: 5px;
+    background: #9fa1a2;
+}
+
+#login3 li input[type=button]{
+    text-align: center;
+    width: 100px;
+    margin: 10px 0 0 30px;
+}
+
+.body {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.body .body-left, .body .body-right {
+    float: left;
+}
+
+/*-------------------------------------------------------------------index左侧部分*/
+.body .body-left .box-left {
+    position: relative;
+    margin-top: 20px;;
+    width: 630px;
+    background: #000;
+    border-radius: 5px;
+}
+
+/*-----------------------------------------------------------放大镜图标*/
+
+.body .body-left .box-left a img {
+    cursor: pointer;
+    position: absolute;
+    top: 42%;
+    left: 45%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 1);
+    opacity: 0;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+/*-----------------------------------------------------------放大镜图标*/
+.body .body-left .box-left img {
+    margin: 5px;
+    width: 620px;
+}
+
+.body .body-left .box-left p {
+    display: block;
+    margin-right: 20px;
+    height: 25px;
+    line-height: 15px;
+    text-align: right;
+    font-size: 12px;
+    color: #fff;
+
+}
+
+/*-----------------------------------------------------------------index右上部分*/
+.body .body-right .box-right {
+    padding: 12px;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 280px;
+    /*border:1px solid #000;*/
+    background: #fff;
+    border-radius: 5px;
+}
+
+.body .body-right .box-right p {
+    margin: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.body .body-right .box-right span {
+    font-size: 14px;
+}
+
+.body .body-right .box-right span a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+
+.body .body-right .box-right p a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+}
+
+/*---------------------------------------------------------index右下部分*/
+.body .body-right .box-right-down {
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 300px;
+    background: #000;
+    border-radius: 5px;
+}
+
+/*-----------------------------------------------------------放大镜图标*/
+
+.body .body-right .box-right-down a img {
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    left: 43%;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: rgba(0, 0, 0, 1);
+    opacity: 0;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+/*-----------------------------------------------------------放大镜图标*/
+.body .body-right .box-right-down img {
+    margin: 5px;
+    width: 290px;
+}
+
+.body .body-right .box-right-down p {
+    display: block;
+    margin-right: 20px;
+    height: 18px;
+    line-height: 12px;
+    text-align: right;
+    font-size: 12px;
+    color: #fff;
+}
+
+/*---------------------------------------------------------index下侧*/
+.body-down {
+    position: relative;
+    margin: 20px auto;
+    width: 70%;
+    background: #000;
+    border-radius: 5px;
+}
+
+/*-----------------------------------------------------------放大镜图标*/
+
+.body-down a img {
+    cursor: pointer;
+    position: absolute;
+    top: 42%;
+    left: 45%;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 1);
+    opacity: 0;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+/*-----------------------------------------------------------放大镜图标*/
+.body-down img {
+    margin: 5px;
+    width: 99%;
+}
+
+.body-down p {
+    display: block;
+    margin-right: 20px;
+    height: 25px;
+    line-height: 15px;
+    text-align: right;
+    font-size: 12px;
+    color: #fff;
+
+}
+
+/*--------------------------------------------------------加号*/
+a.more img {
+    display: block;
+    margin: 30px auto;
+    width: 60px;
+    height: 60px;
+}
+
+/*------------------------------------------------LeftRight 页面的左右按钮*/
+div.Left {
+    position: absolute;
+    left: 6%;
+    top: 48%;
+    width: 100px;
+    height: 100px;
+    background: url("../img/left.png");
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+div.Right {
+    position: absolute;
+    right: 6%;
+    top: 48%;
+    width: 100px;
+    height: 100px;
+    background: url("../img/right.png");
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/*------------------------------------------------Repertory页面瀑布流*/
+
+.outer{
+    position: relative;
+    width: 1000px;
+    margin: 20px auto;
+}
+.inner{
+    position: absolute;
+}
+.innerBox{
+    position: relative;
+    margin: 10px auto;
+    width: 230px;
+    background: #000;
+    border-radius: 5px;
+}
+.innerBox img {
+    margin: 5px;
+    width: 95%;
+}
+
+.innerBox p {
+    display: block;
+    margin:-5px 10px 0 0;
+    height: 20px;
+    line-height: 15px;
+    text-align: right;
+    font-size: 10px;
+    color: #fff;
+}
+/*---------------------------注册模态框*/
+div.mb{
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    z-index: 10;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.8);
+}
+.model{
+    display: none;
+    position: fixed;
+    top:8%;
+    left:30%;
+    z-index: 15;
+    width: 600px;
+    height:auto;
+    background: #efefef;
+    border-radius: 20px;
+}
+.md-head{
+    width:100%;
+    height: 50px;
+    background: #dec0ae;
+    border-top-left-radius:10px ;
+    border-top-right-radius:10px ;
+}
+.md-head i{
+    float: right;
+    margin-right: 10px;
+    font-size: 20px;
+    /*color: #fff;*/
+    line-height: 50px;
+    cursor: pointer;
+}
+.md-head span{
+    margin-left: 10px;
+    font-size: 20px;
+    line-height: 50px;
+}
+form{
+    width: 500px;
+    margin:20px auto;
+}
+.big-box{
+    width:100%;
+    height: 50px;
+    padding-bottom: 30px;
+}
+.big-box .box-one{
+    position: relative;
+    padding-left: 10px;
+    height: 50px;
+    line-height: 50px;
+    border:1px solid #ccc;
+    border-radius: 5px;
+}
+.big-box .box-one input{
+    padding-left: 20px;
+    width: 300px;
+    height: 30px;
+    border:1px solid lightskyblue;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.big-box .box-two{
+    padding-left:10px;
+    width: 100%;
+    height:30px;
+    line-height:30px;
+    font-size:12px;
+}
+.big-box .box-two i{
+     display: inline-block;
+     width:20px;
+     height:20px;
+     vertical-align: middle;
+ }
+.big-box .box-two span{
+    color:gray;
+}
+.big-box .box-two.hide{
+    display: none;
+}
+.big-box.xieyi{
+    height:55px;
+    line-height:55px;
+    width: 100%;
+}
+.big-box.xieyi .box-one{
+    padding:0;
+    border:none;
+}
+.big-box.xieyi .box-one input{
+    height:13px;
+    width:auto;
+    padding:0;
+}
+.big-box.xieyi .box-one span{
+    font-size:14px;
+}
+.big-box.xieyi .box-one a{
+    font-size:12px;
+}
+.big-box.xieyi .box-one.error{
+    line-height: normal;
+    padding:10px auto;
+}
+/*提交按钮*/
+#btn{
+    cursor: pointer;
+    border:none;
+    font-size:16px;
+    width:100%;
+    height: 40px;
+    color:white;
+    border-radius: 5px;
+    background: #a2c667;
+}
+/*box--输入信息错误*/
+.big-box .box-one.error{
+    border:1px solid red;
+}
+/*box--输入信息正确*/
+.big-box .box-one.right i{
+    width:20px;
+    height: 20px;
+    background: url(../img/right2.png) center center no-repeat;
+    position: absolute;
+    top:50%;
+    right:10px;
+    margin-top:-10px;
+}
+/*提示信息样式--tip*/
+/*获取焦点---默认样式*/
+.big-box .box-two.default i{
+    background: url(../img/default.png) center center no-repeat;
+}
+.big-box .box-two.default span{
+    color:gray;
+}
+/*tip--错误样式*/
+.big-box .box-two.error i{
+    background: url(../img/error.png) center center no-repeat;
+}
+.big-box .box-two.error span{
+    color:red;
+}
+/*tip---密码等级*/
+/*弱*/
+.big-box .box-two.ruo i{
+    background: url(../img/ruo.png) center center no-repeat;
+}
+/*中*/
+.big-box .box-two.zhong i{
+    background: url(../img/zhong.png) center center no-repeat;
+}
+/*强*/
+.big-box .box-two.qiang i{
+    background: url(../img/qiang.png) center center no-repeat;
+}
+/*---------------------------------登录模态框*/
+.model2{
+    display: block;
+    position: fixed;
+    top:8%;
+    left:30%;
+    z-index: 15;
+    width: 600px;
+    height:auto;
+    background: #efefef;
+    border-radius: 20px;
+}
+.model2 .md2-head{
+    width:100%;
+    height:50px;
+}

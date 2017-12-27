@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<div class="container">
+    <!--导航条-->
+    <div class="header-bg">
+        <div class="header-body">
+            <a class="logo" href="index.html"></a>
+            <ul class="clear">
+                <li><input type="text" id="search" placeholder="Search">
+                    <ul id="secbox"></ul>
+                </li>
+                <li><a href="Repertory.html">Repertory</a></li>
+                <li><a href="#" id="login2">Login</a>
+                <ul id="login3" >
+                    <li>
+                        <form action="">
+                            <input type="text" id="name2" placeholder="请输入用户名">
+                            <input type="password" id="pwd3" placeholder="请输入密码">
+                            <input type="button" id="dl" value="登录">
+                        </form></li>
+                </ul>
+                </li>
+                <li><a href="#" id="login">Register</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="body">
+        <div class="body-left">
+            <div class="box-left search">
+                <img src="img/main1.jpg" alt="">
+                <p>Created b y: Wang Dong</p>
+                <a><img src="img/icon.png" alt=""></a>
+            </div>
+            <div class="box-left search">
+                <img src="img/main2.png" alt="">
+                <p>Created by: Wang Dong</p>
+                <a><img src="img/icon.png" alt=""></a>
+            </div>
+        </div>
+        <div class="body-right">
+            <div class="box-right">
+                <p>About Simple Desktops</p>
+                <span>A collection of wallpapers curated by <a href="#">Wang Dong</a> to make your computer beautiful without distraction.
+                    <a href="#">Find out more</a> or <a href="#">submit one</a>.</span>
+                <p><a href="#">Follow GitHub</a></p>
+            </div>
+            <div class="box-right-down search">
+                <img src="img/main6.jpg" alt="">
+                <p>Created by: Wang Dong</p>
+                <a><img src="img/icon.png" alt=""></a>
+            </div>
+            <div class="box-right-down search">
+                <img src="img/main4.jpg" alt="">
+                <p>Created by: Wang Dong</p>
+                <a><img src="img/icon.png" alt=""></a>
+            </div>
+            <div class="box-right-down search">
+                <img src="img/main5.jpg" alt="">
+                <p>Created by: Wang Dong</p>
+                <a><img src="img/icon.png" alt=""></a>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="body-down search">
+        <img src="img/1.jpg" alt="">
+        <p>Created by: Wang Dong</p>
+        <a><img src="img/icon.png" alt=""></a>
+    </div>
+    <div class="body-down search">
+        <img src="img/2.jpg" alt="">
+        <p>Created by: Wang Dong</p>
+        <a><img src="img/icon.png" alt=""></a>
+    </div>
+    <div class="body-down search">
+        <img src="img/3.jpg" alt="">
+        <p>Created by: Wang Dong</p>
+        <a><img src="img/icon.png" alt=""></a>
+    </div>
+    <a href="Repertory.html" class="more"><img src="img/plus.png" alt=""></a>
+    <div class="mb"></div>
+    <!--模态框-->
+    <div class="model">
+        <div class="md-head">
+            <span>欢迎注册！</span>
+            <i>X</i>
+        </div>
+        <form>
+            <!--用户名-->
+            <div class="big-box">
+                <div class="box-one">
+                    <label for="userName">用户名&nbsp;&nbsp;&nbsp;： </label>
+                    <input type="text" id="userName" placeholder="请输入用户名">
+                    <i></i>
+                </div>
+                <div class="box-two">
+                    <i></i>
+                    <span></span>
+                </div>
+            </div>
+            <!--密码-->
+            <div class="big-box">
+                <div class="box-one">
+                    <label for="pwd">设置密码： </label>
+                    <input type="password" id="pwd" placeholder="请设置密码">
+                    <i></i>
+                </div>
+                <div class="box-two">
+                    <i></i>
+                    <span></span>
+                </div>
+            </div>
+            <!--密码2-->
+            <div class="big-box">
+                <div class="box-one">
+                    <label for="pwd2">确认密码： </label>
+                    <input type="password" id="pwd2" placeholder="请再次输入密码">
+                    <i></i>
+                </div>
+                <div class="box-two">
+                    <i></i>
+                    <span></span>
+                </div>
+            </div>
+            <!--邮箱-->
+            <div class="big-box">
+                <div class="box-one">
+                    <label for="email">邮箱验证： </label>
+                    <input type="text" id="email" placeholder="请输入邮箱">
+                    <i></i>
+                </div>
+                <div class="box-two">
+                    <i></i>
+                    <span></span>
+                </div>
+            </div>
+            <!--注册协议-->
+            <div class='big-box xieyi'>
+                <div class="box-one">
+                    <input type="checkbox" id='ck' name='ck'/>
+                    <span>我已经阅读并同意<a href="#">《用户注册协议》</a></span>
+                </div>
+                <div class="box-two">
+                    <i></i>
+                    <span></span>
+                </div>
+            </div>
+            <div class="sub">
+                <input type="button" id="btn" value="提交">
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    $(function () {
+        $.ajax({
+            url:"dl.php",
+            dataType:"text",
+            success:function (date) {
+                if(date!=1){
+                    $("#login2").html(date);
+                    $("#login3").html(" ");
+                }
+            }
+        })
+    })
+</script>
+</body>
+</html>

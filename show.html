@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: rgba(0, 0, 0, 0.31);
+        }
+
+        img {
+            display: block;
+            margin: 30px auto;
+            width: 70%;
+            cursor: url("img/big.png"), auto;
+        }
+    </style>
+</head>
+<body>
+<img src="" alt="">
+</body>
+<script>
+    $(function () {
+        var Url = window.location.href;
+        var Arr = Url.split("url=");
+        var flag = 0;//----普通状态，图标为放大
+        Url = Arr[1];
+        $("img").attr("src", Url);
+        $("img").on("click", function () {
+            if (flag === 0) {
+                $(this).css({
+                    cursor: "url('img/small.png'),auto",
+                    width: "150%",
+                    margin: "0"
+                });
+                flag = 1;
+            } else {
+                $(this).css({
+                    cursor: "url('img/big.png'),auto",
+                    margin: "30px auto",
+                    width: "70%"
+                });
+                flag = 0;
+            }
+        });
+        $(document).on('contextmenu',"img",function(e){
+            e.preventDefault();
+            alert('保存图片请先登录！');
+        });
+    });
+</script>
+</html>
